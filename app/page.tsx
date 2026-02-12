@@ -1,65 +1,70 @@
-import Image from "next/image";
+import { Code2, FileDiff, FileJson, Zap } from "lucide-react"
+import { FeatureCard } from "@/components/ui/FeatureCard"
+import { AdPlaceholder } from "@/components/ads/AdPlaceholder"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <div className="container mx-auto px-4 py-12 min-h-[calc(100vh-3.5rem)]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+
+        {/* Main Content */}
+        <div className="flex flex-col gap-10">
+          {/* Hero Section */}
+          <div className="text-center lg:text-left space-y-4">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
+              API Debug Toolkit
+            </h1>
+            <p className="text-lg text-muted-foreground/80 max-w-2xl leading-relaxed">
+              Essential, privacy-first developer tools. No server calls, no data leaks.
+              Run entire workflows client-side.
+            </p>
+          </div>
+
+          {/* Tools Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FeatureCard
+              title="JSON Formatter"
+              description="Validate, format, and minify JSON with smart error highlighting."
+              href="/json-formatter"
+              icon={<FileJson size={28} className="text-foreground" />}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <FeatureCard
+              title="JSON to Types"
+              description="Convert JSON to TypeScript, Zod Schemas, and Pydantic models."
+              href="/convert-json-to-typescript"
+              icon={<Code2 size={28} className="text-foreground" />}
+            />
+            <FeatureCard
+              title="JSON Diff"
+              description="Compare two JSON objects to find differences instantly."
+              href="/json-diff-tool"
+              icon={<FileDiff size={28} className="text-foreground" />}
+            />
+            <FeatureCard
+              title="Smart Analyzer"
+              description="Detect precision loss, nulls, and schema inconsistencies."
+              href="/debug-invalid-json"
+              icon={<Zap size={28} className="text-foreground" />}
+            />
+          </div>
+
+          <div className="w-full mt-4">
+            <AdPlaceholder className="w-full h-24" label="Horizontal Ad Space" />
+          </div>
         </div>
-      </main>
+
+        {/* Sidebar (Ads) */}
+        <aside className="hidden lg:flex flex-col gap-6 pt-4">
+          <div className="sticky top-24 space-y-6">
+            <div className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Sponsored</div>
+            <AdPlaceholder className="w-full h-[600px]" label="Vertical Ad Space" />
+            <div className="p-4 bg-muted/10 border border-white/5 rounded-lg text-sm text-muted-foreground/60">
+              <p>Simple, client-side tools built for speed and privacy.</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
     </div>
-  );
+  )
 }

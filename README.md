@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# API Debug Toolkit 🛠️
 
-## Getting Started
+A fast, privacy-first, client-side developer toolkit for API & JSON workflows.
+Built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **Core Tools**
+-   **JSON Formatter & Validator**: Pretty print, minify, and validate JSON with line-specific errors.
+-   **JSON Diff Tool**: Visual comparison of two JSON objects to spot changes instantly.
+-   **Smart Analyzer**: Detect potential issues like deep nesting, float precision loss, and inconsistent types.
+-   **Converters**:
+    -   **JSON to TypeScript**: Generate Interfaces, Zod Schemas, and Pydantic Models.
+    -   **JSON <-> CSV**: Bi-directional conversion.
+    -   **JSON <-> XML**: Bi-directional conversion.
+    -   **JSON <-> YAML**: Bi-directional conversion.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **Performance & Design**
+-   **⚡ Blazing Fast**: 
+    -   **Web Worker Offloading**: Heavy JSON parsing and tree flattening runs in a background thread, keeping the UI responsive even with 50MB+ files.
+    -   **Virtualization**: Uses `react-window` to render massive trees (50k+ nodes) instantly.
+    -   **Compact Data Structures**: Optimized internal data transfer for minimal overhead.
+-   **🎨 Monochrome Theme**: A professional, high-contrast dark mode designed for developer focus (Black/White/Dark Gray with Electric Blue accents).
+-   **🔒 Privacy First**: All processing happens **client-side**. No data is ever sent to any server.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+-   **Framework**: Next.js (App Router)
+-   **Language**: TypeScript
+-   **Styling**: Tailwind CSS (v4) + CSS Variables
+-   **State Management**: React Hooks + Web Workers
+-   **Editor**: Monaco Editor (`@monaco-editor/react`)
+-   **Icons**: Lucide React
+-   **Theming**: `next-themes` (Dark/Light mode)
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  **Clone the repo**
+    ```bash
+    git clone https://github.com/llama-spec/JSON-toolkit.git
+    cd JSON-toolkit
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3.  **Run development server**
+    ```bash
+    npm run dev
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4.  **Build for production**
+    ```bash
+    npm run build
+    npm start
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+Built with ❤️ for Developers.
