@@ -1,14 +1,18 @@
-import { Providers } from "./providers"
+import type { Metadata } from "next";
+import { Providers } from "./providers";
 import { Navbar } from "@/components/Navbar"
 import "./globals.css"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "API Debug Toolkit - Fast JSON Tools for Developers",
   description: "A fast, privacy-first API debug toolkit. Format JSON, convert to TypeScript, validator, diff tool, and more. Processing happens client-side.",
   verification: {
-    google: 'Sbcd-tx6O9b-8xC6ux0hJkwWHLxDc5PRd6UgFUuMGHc'
-  }
-}
+    google: "Sbcd-tx6O9b-8xC6ux0hJkwWHLxDc5PRd6UgFUuMGHc",
+  },
+  icons: {
+    icon: "/bracket-curly.png",
+  },
+};
 
 export default function RootLayout({
   children,
