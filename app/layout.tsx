@@ -6,7 +6,7 @@ export const metadata = {
   title: "API Debug Toolkit - Fast JSON Tools for Developers",
   description: "A fast, privacy-first API debug toolkit. Format JSON, convert to TypeScript, validator, diff tool, and more. Processing happens client-side.",
   verification: {
-    google: 'Sbcd-tx6O9b-8xC6ux0hJk'
+    google: 'Sbcd-tx6O9b-8xC6ux0hJkwWHLxDc5PRd6UgFUuMGHc'
   }
 }
 
